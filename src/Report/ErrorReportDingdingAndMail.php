@@ -32,6 +32,6 @@ class ErrorReportDingdingAndMail implements ErrorReport
      */
     public function send(string $title, array $msgs)
     {
-        $this->logger->get('tcc')->emergency($title, $msgs);
+        $this->logger->get('tcc', 'tcc')->emergency($title, $msgs);
     }
 }

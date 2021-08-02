@@ -94,7 +94,7 @@ class TccTransactionListener extends AbstractConsumer
             $this->redis->hSet('TccSuccess', $info->tid, $tccInfo);
         }
         $msg = sprintf('事务:%s,%s阶段,执行状态:%s.', $info->tid, $data['tcc_method'], $data['status']);
-        $this->logger->get('tcc')->debug($msg);
+        $this->logger->get('tcc', 'tcc')->debug($msg);
         return Result::ACK;
     }
 }
