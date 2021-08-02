@@ -1,0 +1,53 @@
+{
+    "name": "zrone/tcc-transaction",
+    "authors": [
+        {
+            "name": "zrone",
+            "email": "xujining2008@126.com"
+        }
+    ],
+    "require": {
+        "hyperf/config": "~v2.2.0",
+        "hyperf/di": "~v2.2.0",
+        "hyperf/guzzle": "^2.2",
+        "hyperf/logger": "~v2.2.0",
+        "hyperf/nsq": "~v2.2.0",
+        "hyperf/redis": "~v2.2.0",
+        "hyperf/rpc-client": "~v2.2.0",
+        "hyperf/server": "~v2.2.0",
+        "hyperf/snowflake": "~v2.2.0",
+        "hyperf/utils": "^2.2",
+        "phpmailer/phpmailer": "~6.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=7.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^0.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zrone\\TccTransaction\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zrone\\TccTransaction\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {},
+        "hyperf": {
+            "config": "Zrone\\TccTransaction\\ConfigProvider"
+        }
+    },
+    "scripts": {
+        "test": "co-phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 4096M -l 5 -c phpstan.neon",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
